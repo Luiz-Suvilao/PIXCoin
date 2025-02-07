@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PIXcoin</string>
+    <string name="select_payment_form">Selecione a forma de pagamento</string>
+    <string name="credit_card">Cartão de crédito</string>
+    <string name="debit_card">Cartão de Débito</string>
+    <string name="pix">PIX</string>
 </resources>
