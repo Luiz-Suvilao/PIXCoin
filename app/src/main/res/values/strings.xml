@@ -4,4 +4,5 @@
     <string name="credit_card">Cartão de crédito</string>
     <string name="debit_card">Cartão de Débito</string>
     <string name="pix">PIX</string>
+    <string name="pix_title">Pagamento via PIX</string>
 </resources>
