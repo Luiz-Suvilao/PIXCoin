@@ -1,6 +1,6 @@
 package com.suvilao.pixcoin.responses
 
-data class MachineResponse(
+data class Machine(
     val codigo: String,
     val operacao: String,
     val urlServidor: String,
@@ -27,5 +27,5 @@ data class MachineResponse(
 )
 
 data class GetLittleMachineResponse(
-    val maquina: MachineResponse
+    val maquina: Machine
 )
