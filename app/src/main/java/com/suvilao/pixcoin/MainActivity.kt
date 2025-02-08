@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             if (response != null) {
                 withContext(Dispatchers.IO) {
                     MachineStorage.saveMachine(this@MainActivity, response.maquina)
+                    navigateToPaymentView(response.maquina)
                 }
             } else {
                 Toast.makeText(this@MainActivity, "Erro ao buscar as configurações da máquina!", Toast.LENGTH_SHORT).show()
@@ -61,14 +62,16 @@ class MainActivity : AppCompatActivity() {
             val machine = loadSavedMachine()
             machine?.let {
                 Toast.makeText(this@MainActivity, "Máquina carregada: ${it.codigo}", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this@MainActivity, PaymentMethodActivity::class.java).apply {
-                    putExtra("machine", it)
-                }
-                startActivity(intent)
-                finish()
+                navigateToPaymentView(it)
             }
         }
     }
 
+    private fun navigateToPaymentView(machine: Machine) {
+        val intent = Intent(this@MainActivity, PaymentMethodActivity::class.java).apply {
+            putExtra("machine", machine)
+        }
+        startActivity(intent)
+        finish()
+    }
 }
