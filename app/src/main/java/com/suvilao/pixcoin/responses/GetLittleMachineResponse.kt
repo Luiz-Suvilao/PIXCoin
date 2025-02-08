@@ -1,5 +1,7 @@
 package com.suvilao.pixcoin.responses
 
+import java.io.Serializable
+
 data class Machine(
     val codigo: String,
     val operacao: String,
@@ -24,7 +26,7 @@ data class Machine(
     val macaddressMaquininha: String,
     val operadora: String,
     val createdAt: String
-)
+) : Serializable
 
 data class GetLittleMachineResponse(
     val maquina: Machine

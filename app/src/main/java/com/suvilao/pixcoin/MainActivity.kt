@@ -1,5 +1,6 @@
 package com.suvilao.pixcoin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -45,7 +46,6 @@ class MainActivity : AppCompatActivity() {
                 withContext(Dispatchers.IO) {
                     MachineStorage.saveMachine(this@MainActivity, response.maquina)
                 }
-                Toast.makeText(this@MainActivity, "Máquina encontrada: ${response.maquina.corPrincipal}", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this@MainActivity, "Erro ao buscar as configurações da máquina!", Toast.LENGTH_SHORT).show()
             }
@@ -60,8 +60,15 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val machine = loadSavedMachine()
             machine?.let {
-                Toast.makeText(this@MainActivity, "Máquina carregada: ${it.corPrincipal}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Máquina carregada: ${it.codigo}", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this@MainActivity, PaymentMethodActivity::class.java).apply {
+                    putExtra("machine", it)
+                }
+                startActivity(intent)
+                finish()
             }
         }
     }
+
 }
