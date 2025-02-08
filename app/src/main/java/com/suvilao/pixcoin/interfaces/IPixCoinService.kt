@@ -6,5 +6,5 @@ import retrofit2.http.Path
 
 interface IPixCoinService {
     @GET("buscar-maquininha/{code}")
-    fun getLittleMachine(@Path("code") code: String): GetLittleMachineResponse
+    suspend fun getLittleMachine(@Path("code") code: String): GetLittleMachineResponse
 }
