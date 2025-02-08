@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_payment_form"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:textColor="#000"
+        />
+
+    <Button
+        android:id="@+id/btnCredit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/credit_card"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:id="@+id/btnDebit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/debit_card"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:id="@+id/btnPIX"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pix"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:text="@string/app_name"
+        android:textSize="25sp"
+        />
+</LinearLayout>
