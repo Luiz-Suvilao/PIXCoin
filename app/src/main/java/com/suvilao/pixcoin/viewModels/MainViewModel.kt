@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 
 import com.suvilao.pixcoin.responses.GetLittleMachineResponse
 
-class PixViewModel(private val apiService: IPixCoinService) : ViewModel() {
+class MainViewModel(private val apiService: IPixCoinService) : ViewModel() {
     fun getLittleMachine(code: String, onResult: (GetLittleMachineResponse?) -> Unit) {
         viewModelScope.launch {
             try {
