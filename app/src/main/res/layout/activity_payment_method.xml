@@ -15,7 +15,7 @@
         android:textSize="18sp"
         android:padding="16dp"
         android:textColor="#000"
-        />
+    />
 
     <Button
         android:id="@+id/btnCredit"
@@ -24,7 +24,7 @@
         android:text="@string/credit_card"
         android:textSize="15sp"
         android:layout_marginBottom="10dp"
-        />
+    />
 
     <Button
         android:id="@+id/btnDebit"
@@ -33,7 +33,7 @@
         android:text="@string/debit_card"
         android:textSize="15sp"
         android:layout_marginBottom="10dp"
-        />
+    />
 
     <Button
         android:id="@+id/btnPIX"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="@string/pix"
         android:textSize="15sp"
-        />
+    />
 
     <TextView
         android:id="@+id/logo"
@@ -51,5 +51,5 @@
         android:textAlignment="center"
         android:text="@string/app_name"
         android:textSize="25sp"
-        />
+    />
 </LinearLayout>
