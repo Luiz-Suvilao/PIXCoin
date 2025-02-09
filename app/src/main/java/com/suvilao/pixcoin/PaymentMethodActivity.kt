@@ -16,7 +16,9 @@ class PaymentMethodActivity : AppCompatActivity() {
         val btnPIX = findViewById<Button>(R.id.btnPIX)
 
         btnPIX.setOnClickListener {
-            val intent = Intent(this, PIXActivity::class.java)
+            val intent = Intent(this, PIXActivity::class.java).apply {
+                putExtra("machine", machine)
+            }
             startActivity(intent)
         }
     }

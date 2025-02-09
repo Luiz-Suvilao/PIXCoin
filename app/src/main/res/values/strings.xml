@@ -5,6 +5,7 @@
     <string name="debit_card">Cartão de Débito</string>
     <string name="pix">PIX</string>
     <string name="pix_title">Pagamento via PIX</string>
+    <string name="select_value">Selecione o valor desejado</string>
     <string name="code_input_placeholder">Ex: 4XB3A9</string>
     <string name="enter_btn">Entrar</string>
     <string name="insert_machine_code">Insiria o código da máquina</string>
