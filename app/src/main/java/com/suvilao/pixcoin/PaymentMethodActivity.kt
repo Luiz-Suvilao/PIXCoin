@@ -13,8 +13,11 @@ class PaymentMethodActivity : AppCompatActivity() {
 
         val machine = intent.getSerializableExtra("machine") as Machine
 
-        val btnPIX = findViewById<Button>(R.id.btnPIX)
+        addClickEventOnPixButton(machine)
+    }
 
+    private fun addClickEventOnPixButton(machine: Machine) {
+        val btnPIX = findViewById<Button>(R.id.btnPIX)
         btnPIX.setOnClickListener {
             val intent = Intent(this, PIXActivity::class.java).apply {
                 putExtra("machine", machine)
