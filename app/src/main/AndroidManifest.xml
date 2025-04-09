@@ -30,5 +30,6 @@
         <activity android:name=".PIXActivity" />
         <activity android:name=".PaymentMethodActivity" />
         <activity android:name=".QrCodeActivity" />
+        <activity android:name=".PaymentSuccessActivity" />
     </application>
 </manifest>

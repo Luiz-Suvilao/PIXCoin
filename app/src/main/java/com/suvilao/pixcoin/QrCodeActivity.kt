@@ -1,5 +1,6 @@
 package com.suvilao.pixcoin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
@@ -10,7 +11,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -43,8 +43,6 @@ class QrCodeActivity : AppCompatActivity() {
 
         orderCheckJob = CoroutineScope(Dispatchers.Main).launch {
             while (isActive) {
-                delay(5000)
-
                 try {
                     val response = withContext(Dispatchers.IO) {
                         pagBankService.api.getOrder(orderId, "Bearer $token")
@@ -67,9 +65,8 @@ class QrCodeActivity : AppCompatActivity() {
 
     private fun showPaymentSuccess() {
         Toast.makeText(this, "Pagamento confirmado!", Toast.LENGTH_SHORT).show()
-        // Ou navegar para outra activity:
-        // startActivity(Intent(this, PaymentSuccessActivity::class.java))
-        // finish()
+         startActivity(Intent(this, PaymentSuccessActivity::class.java))
+         finish()
     }
 
     override fun onDestroy() {

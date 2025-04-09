@@ -9,4 +9,8 @@
     <string name="code_input_placeholder">Ex: 4XB3A9</string>
     <string name="enter_btn">Entrar</string>
     <string name="insert_machine_code">Insiria o código da máquina</string>
+
+    <string name="success_icon">Ícone de sucesso</string>
+    <string name="payment_success">Pagamento confirmado!</string>
+    <string name="returning_to_payment_method">Voltando aos métodos de pagamento...</string>
 </resources>
