@@ -2,6 +2,7 @@ package com.suvilao.pixcoin
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,11 @@ class QrCodeActivity : AppCompatActivity() {
             Glide.with(this)
                 .load(qrCodeUrl)
                 .into(imageViewQrCode)
+
+            val btnBack = findViewById<Button>(R.id.btnBack)
+            btnBack.setOnClickListener {
+                finish()
+            }
         }
 
         startOrderStatusCheck(orderId, clientToken)
