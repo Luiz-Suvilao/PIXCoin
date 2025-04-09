@@ -29,5 +29,6 @@
         </activity>
         <activity android:name=".PIXActivity" />
         <activity android:name=".PaymentMethodActivity" />
+        <activity android:name=".QrCodeActivity" />
     </application>
 </manifest>
