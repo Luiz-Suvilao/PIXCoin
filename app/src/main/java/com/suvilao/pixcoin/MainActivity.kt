@@ -2,8 +2,10 @@ package com.suvilao.pixcoin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -40,18 +42,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getLittleMachine(code: String) {
+        val loadingOverlay = findViewById<FrameLayout>(R.id.loadingOverlay)
+
         lifecycleScope.launch {
-            val response = withContext(Dispatchers.IO) { mainViewModel.getLittleMachineSync(code) }
+            loadingOverlay.visibility = View.VISIBLE
+
+            val response = withContext(Dispatchers.IO) {
+                mainViewModel.getLittleMachineSync(code)
+            }
+
+            loadingOverlay.visibility = View.GONE
+
             if (response != null) {
                 withContext(Dispatchers.IO) {
                     MachineStorage.saveMachine(this@MainActivity, response.maquina)
-                    navigateToPaymentView(response.maquina)
                 }
+                navigateToPaymentView(response.maquina)
             } else {
-                Toast.makeText(this@MainActivity, "Erro ao buscar as configurações da máquina!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@MainActivity,
+                    "Erro ao buscar as configurações da máquina!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
+
+
 
     private suspend fun loadSavedMachine(): Machine? {
         return MachineStorage.getMachine(this@MainActivity)
