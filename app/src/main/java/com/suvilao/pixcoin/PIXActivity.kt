@@ -26,6 +26,11 @@ class PIXActivity : AppCompatActivity() {
 
         val machine = intent.getSerializableExtra("machine") as Machine
         renderValuesButtons(machine)
+
+        val btnBack = findViewById<Button>(R.id.btnBack)
+        btnBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun renderValuesButtons(machine: Machine) {
