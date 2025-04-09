@@ -11,9 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.suvilao.pixcoin.responses.Machine
 import com.suvilao.pixcoin.services.PixCoinService
 import com.suvilao.pixcoin.viewModels.PixViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -80,6 +78,8 @@ class PIXActivity : AppCompatActivity() {
                     val intent = Intent(this@PIXActivity, QrCodeActivity::class.java).apply {
                         putExtra("QR_CODE_URL", qrCode.href)
                         putExtra("QR_CODE_TYPE", qrCode.rel)
+                        putExtra("clientToken", response.clientToken)
+                        putExtra("orderId", response.orderId)
                     }
                     startActivity(intent)
 

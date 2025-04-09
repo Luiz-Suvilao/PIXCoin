@@ -10,5 +10,7 @@ data class QrCodeItem(
 )
 
 data class CreatePaymentOrderResponse(
-    @SerializedName("qr_codes") val qrCodes: List<QrCodeItem>
+    @SerializedName("qr_codes") val qrCodes: List<QrCodeItem>,
+    @SerializedName("client_token") val clientToken: String,
+    @SerializedName("order_id") val orderId: String,
 )
