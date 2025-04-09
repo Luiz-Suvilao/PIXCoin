@@ -25,4 +25,10 @@ object MachineStorage {
         val json = preferences[MACHINE_KEY] ?: return null
         return Gson().fromJson(json, Machine::class.java)
     }
+
+    suspend fun deleteMachine(context: Context) {
+        context.dataStore.edit { preferences ->
+            preferences.remove(MACHINE_KEY)
+        }
+    }
 }
